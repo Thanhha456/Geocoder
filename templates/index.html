@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> Data Collector App</title>
+<head>
+    <link href="../static/main.css" rel="stylesheet">
+</head>
+    <body>
+        <div class="container">
+            <h1>Super Geocoder</h1>
+            <h3>Please upload your CSV file. The values containing address should be in a column named 'address' or 'Address'</h3>
+                <form action="{{url_for('success')}}" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file" accept=".csv">   
+                    <button type="submit"> Submit </button>              
+                </form> 
+            <br />
+            <div class='output'>
+                {{text | safe}}
+                <br />
+                <br />
+            </div>
+            {% if btn %}
+                {% include btn %}
+            {% endif %}
+            <br />
+            <br />      
+            
+        </div>
+    </body>
+
+</html>
